@@ -1,64 +1,148 @@
+# Proyecto de Gestión de Citas Médicas con React
 
-# Ejercicio Práctico: Desarrollo de Componentes Básicos con ReactJS para el Proyecto del Hospital
+Este es un proyecto desarrollado con React que simula la gestión de citas médicas en un hospital. Los usuarios pueden ver los doctores disponibles, los servicios médicos y agendar citas con los doctores seleccionados.
 
-## Contexto:
-En este ejercicio práctico, los estudiantes comenzarán a desarrollar el sistema del hospital utilizando los elementos fundamentales de ReactJS. Implementarán componentes reutilizables para distintas secciones de la web del hospital, usando JSX para renderizar datos y manejar el flujo de información con props. También deberán utilizar Hooks y formularios para manejar la interacción del usuario.
+## Características
 
-## Duración:
-2 horas
+1. **Componentes Reutilizables**:
+   - `DoctorCard`: Muestra la información de un doctor (nombre, especialidad, años de experiencia).
+   - `ServiceList`: Lista los servicios médicos disponibles en el hospital.
+   - `AppointmentForm`: Formulario para agendar citas con un doctor.
 
-## Requisitos:
+2. **Hooks en React**:
+   - **`useState`**: Se usa para manejar los estados de los formularios y los datos (nombre del paciente, doctor seleccionado, fecha de la cita, servicio seleccionado).
+   - **`useEffect`**: Se utiliza para cargar los doctores y servicios cuando el componente principal (`App`) se monta en el DOM.
 
-### 1. Creación de Componentes en ReactJS (1.5 puntos)
-- Crea los siguientes componentes reutilizables para la aplicación del hospital:
-  - **DoctorCard**: Muestra la información de un doctor (nombre, especialidad, años de experiencia).
-  - **ServiceList**: Lista los servicios médicos disponibles en el hospital.
-  - **AppointmentForm**: Un formulario para que los usuarios agenden una cita con un doctor.
-  
-- Asegúrate de que los componentes sean modulares y puedan ser reutilizados en otras secciones.
+3. **Flujo del Proyecto**:
+   - Los datos de los doctores y servicios se cargan y se pasan como `props` entre componentes.
+   - Los formularios permiten a los usuarios ingresar sus datos y agendar citas, que se muestran en la consola y en una alerta.
 
-### 2. Uso de JSX para Renderización de Datos (1 punto)
-- Utiliza JSX para crear la estructura visual de los componentes. Asegúrate de:
-  - Insertar expresiones JSX para mostrar los datos dinámicos de los doctores, servicios y citas.
-  - Utilizar correctamente atributos en JSX y evitar errores comunes como el uso incorrecto de `className` en lugar de `class`.
+---
 
-### 3. Flujo de Datos con Props (1 punto)
-- Implementa props para pasar datos entre los componentes:
-  - Pasa los datos de doctores al componente **DoctorCard** desde el componente principal.
-  - Pasa los datos de servicios al componente **ServiceList** desde el componente principal.
-  - Usa props para manejar los datos de entrada en el formulario de citas (**AppointmentForm**), como el nombre del paciente y el doctor seleccionado.
+## Tecnologías Utilizadas
 
-### 4. Listas y Keys en React (1 punto)
-- Utiliza correctamente listas y keys en React para renderizar dinámicamente la lista de doctores y servicios.
-- Asegúrate de que cada ítem de la lista tenga una key única para optimizar el rendimiento de la aplicación.
+- **React**: Biblioteca de JavaScript para la construcción de interfaces de usuario.
+- **Hooks**: `useState` y `useEffect` para gestionar el estado y el ciclo de vida de los componentes.
+- **JSX**: Sintaxis para definir la estructura visual de los componentes.
+- **CSS**: Estilos básicos para la aplicación.
 
-### 5. Formulario con Manejo de Estado (1 punto)
-- Crea el formulario de citas (**AppointmentForm**) y utiliza Hooks como `useState` para manejar los datos del formulario (nombre del paciente, especialidad del doctor, fecha de la cita).
-- Al enviar el formulario, muestra los datos ingresados en la consola del navegador o en la interfaz.
+---
 
-### 6. Introducción a Hooks y Ciclo de Vida (1.5 puntos)
-- Utiliza Hooks para manejar el ciclo de vida de los componentes:
-  - Usa `useEffect` para cargar la lista de doctores y servicios cuando el componente principal se monta en el DOM.
-  - Usa `useState` para manejar el estado de las citas y los servicios seleccionados por el usuario.
+## Estructura del Proyecto
 
-## Herramientas a Utilizar:
-- **ReactJS** para la creación de los componentes reutilizables y la gestión del estado.
-- **JSX** para la renderización dinámica de datos en los componentes.
-- **React Developer Tools** para depurar y verificar la correcta creación de componentes y el paso de props.
+```plaintext
+/src
+  └── /components
+      ├── DoctorCard.jsx        # Componente para mostrar la información del doctor.
+      ├── ServiceList.jsx       # Componente para mostrar la lista de servicios.
+      └── AppointmentForm.jsx   # Componente para el formulario de citas.
+  ├── App.jsx                   # Componente principal que maneja el estado y los efectos.
+  └── App.css                   # Estilos básicos para la aplicación.
+```
 
-## Entrega:
-### Formato de entrega:
-- **Opción 1**: Enviar un enlace al repositorio de GitHub con el proyecto ReactJS implementado, incluyendo los componentes creados y el archivo README.
-- **Opción 2**: Entregar un archivo ZIP comprimido con el proyecto React, incluyendo el código de los componentes y el archivo README.
 
-___
+---
 
-# React + Vite
+## Pasos para Ejecutar el Proyecto
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. **Clonar el repositorio**:
+   ```bash
+      git clone https://github.com/natavica/m04--e2--componentes_basicos_react.git
+      cd m04--e2--componentes_basicos_react
 
-Currently, two official plugins are available:
+2. **Instalar dependencias**:
+    ```bash
+      npm install
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# m04--e2--componentes_basicos_react
+3. **Iniciar el servidor de desarrollo**:
+    ```bash
+      npm run dev
+
+4. **Abrir la aplicación**: Abre tu navegador y accede a http://localhost:5175 para ver la aplicación en acción.
+
+
+---
+
+## Detalles de Implementación
+
+1. **DoctorCard Component**
+Este componente recibe como props los datos de un doctor (nombre, especialidad, años de experiencia) y los muestra.
+```jsx
+const DoctorCard = ({ name, specialty, yearsOfExperience }) => (
+  <div className="doctor-card">
+    <h3>{name}</h3>
+    <p>Especialidad: {specialty}</p>
+    <p>Años de experiencia: {yearsOfExperience}</p>
+  </div>
+);
+```
+
+2. **ServiceList Component**
+Este componente muestra una lista de servicios médicos disponibles y permite al usuario seleccionar uno.
+```jsx
+const ServiceList = ({ services, handleServiceChange }) => (
+  <div className="service-list">
+    <h2>Servicios Médicos Disponibles</h2>
+    <select onChange={handleServiceChange}>
+      <option value="">Seleccionar servicio...</option>
+      {services.map((service, index) => (
+        <option key={index} value={service}>{service}</option>
+      ))}
+    </select>
+  </div>
+);
+```
+
+3. **AppointmentForm Component**
+Este componente muestra un formulario donde el usuario puede ingresar su nombre, seleccionar un doctor y una fecha para la cita. Los datos son gestionados mediante el estado useState y se manejan con `handleAppointmentChange`.
+
+```jsx
+const AppointmentForm = ({ doctors, appointmentDetails, handleAppointmentChange, handleSubmit }) => (
+  <form onSubmit={handleSubmit}>
+    <h2>Agendar Cita</h2>
+
+    <label htmlFor="patientName">Nombre del paciente:</label>
+    <input
+      type="text"
+      id="patientName"
+      name="patientName"
+      value={appointmentDetails.patientName}
+      onChange={handleAppointmentChange}
+      required
+    />
+
+    <label htmlFor="doctor">Selecciona un doctor:</label>
+    <select
+      id="doctor"
+      name="selectedDoctor"
+      value={appointmentDetails.selectedDoctor}
+      onChange={handleAppointmentChange}
+      required
+    >
+      <option value="">Seleccionar...</option>
+      {doctors.map((doctor) => (
+        <option key={doctor.id} value={doctor.name}>
+          {doctor.name} - {doctor.specialty}
+        </option>
+      ))}
+    </select>
+
+    <label htmlFor="appointmentDate">Fecha de la cita:</label>
+    <input
+      type="date"
+      id="appointmentDate"
+      name="appointmentDate"
+      value={appointmentDetails.appointmentDate}
+      onChange={handleAppointmentChange}
+      required
+    />
+
+    <button type="submit">Agendar cita</button>
+  </form>
+);
+```
+
+4. **Uso de `useState` y `useEffect`**
+
+- **`useState`**: Se utiliza para manejar los datos del formulario, como el nombre del paciente, el doctor seleccionado y la fecha de la cita.
+- **`useEffect`**: Se utiliza para cargar la lista de doctores y servicios cuando el componente principal (`App`) se monta.
