@@ -1,15 +1,19 @@
 /* App.css */
-.doctor-card {
-  color: rgb(96, 94, 94);
-  background-color: #f4f4f4;
-  padding: 20px 20px 10px 20px;
-  margin-bottom: 15px;
-  border-radius: 12px;
-}
 
 .service-list ul {
   list-style-type: none;
   padding: 0;
+}
+
+.app_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgb(232, 229, 229);
+  width: 100%;
+  padding: 20px;
+  margin-top: 40px;
 }
 
 form {

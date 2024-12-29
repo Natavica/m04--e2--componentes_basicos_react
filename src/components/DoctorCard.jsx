@@ -1,23 +1,17 @@
 import React from "react";
+import "./DoctorCard.css";
 
 // Componente DoctorCard
 const DoctorCard = ({ name, specialty, yearsOfExperience }) => {
   return (
-     <div className="doctor-card">
-      <p>{name}</p> 
-      <p>Especialidad: {specialty}</p> 
-      <p>Años de experiencia: {yearsOfExperience}</p> 
-    </div> 
-    
+    <div className="doctor__card">
+      <p className="doctor__card--name">{name}</p>
+      <p className="doctor__card--speciality">Especialidad: {specialty}</p>
+      <p className="doctor__card--experience">
+        Años de experiencia: {yearsOfExperience}
+      </p>
+    </div>
   );
 };
 
 export default DoctorCard;
-
-{
-  /* <div className="doctor-card">
-      <h3>{name}</h3> 
-      <p>Especialidad: {specialty}</p> 
-      <p>Años de experiencia: {yearsOfExperience}</p> 
-    </div> */
-}
