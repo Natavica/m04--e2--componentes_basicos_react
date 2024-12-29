@@ -26,6 +26,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
+  justify-content: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -66,3 +67,8 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* select {
+  width: 100%;
+  padding: 10px;
+} */

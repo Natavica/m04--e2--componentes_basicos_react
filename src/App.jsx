@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from './components/Navbar';
 import DoctorCard from './components/DoctorCard';
 import ServiceList from './components/ServiceList';
 import AppointmentForm from './components/AppointmentForm';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
@@ -62,6 +64,9 @@ function App() {
 
   return (
     <div className="App">
+
+      <Navbar />
+
       <h1>Bienvenido al Hospital</h1>
 
       <h2>Doctores Disponibles</h2>
@@ -77,6 +82,8 @@ function App() {
         handleAppointmentChange={handleAppointmentChange} 
         handleSubmit={handleSubmit} 
       />
+
+      <Footer />
     </div>
   );
 }
