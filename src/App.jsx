@@ -45,10 +45,9 @@ function App() {
 
     // Simulamos una carga de datos de servicios
     const servicesData = [
-      "Consulta General",
-      "Cirugía",
-      "Radiología",
-      "Urgencias",
+      "Cardiología",
+      "Pediatría",
+      "Dermatología",
     ];
 
     // Actualizamos el estado con los datos cargados
